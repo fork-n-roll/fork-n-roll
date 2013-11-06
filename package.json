@@ -1,0 +1,19 @@
+{
+  "name": "nko4-curly-brackets",
+  "version": "0.0.0",
+  "description": "Curly Brackets",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nko4/curly-brackets.git"
+  },
+  "dependencies": {
+    "nko": "*"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
