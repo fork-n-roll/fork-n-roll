@@ -173,6 +173,7 @@ $default-float: left;
 // Control header font styles
 
 // $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-family: "Montserrat", "Helvetica", Helvetica, Arial, sans-serif; 
 // $header-font-weight: bold;
 // $header-font-style: normal;
 // $header-font-color: #222;
@@ -1256,11 +1257,13 @@ $default-float: left;
 // Background color for the top bar
 
 // $topbar-bg-color: #111;
+$topbar-bg-color: #FFF;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 
 // $topbar-height: 45px;
+$topbar-height: 50px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
@@ -1275,7 +1278,9 @@ $default-float: left;
 // Style the top bar dropdown elements
 
 // $topbar-dropdown-bg: #222;
+$topbar-dropdown-bg: #FFF;
 // $topbar-dropdown-link-color: #fff;
+$topbar-dropdown-link-color: #222;
 // // $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
@@ -1286,10 +1291,14 @@ $default-float: left;
 // $topbar-link-color: #fff;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
+$topbar-link-color: #222;
+$topbar-link-color-hover: #888;
+$topbar-link-color-active: #222;
 // $topbar-link-weight: bold;
 // $topbar-link-font-size: em-calc(13);
 // $topbar-link-hover-lightness: -30%; // Darken by 30%
 // $topbar-link-bg-hover: darken($topbar-bg-color, 3%);
+$topbar-link-bg-hover: #FFF;
 // $topbar-link-bg-active: darken($topbar-bg-color, 3%);
 
 // $topbar-dropdown-label-color: #555;
