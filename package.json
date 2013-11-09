@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
     "node": "0.10.x"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "mocha": "~1.14.0",
+    "supertest": "~0.8.1",
+    "should": "~2.0.2"
   }
 }
