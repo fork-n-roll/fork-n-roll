@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Foundation 4</title>
+
+  
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="stylesheets/vendor/no-theme/jquery-ui-1.10.3.custom.css">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <script src="javascripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <div class="contain-to-grid">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="#">Fork and Roll </a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="#">About</a></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="container">
+    <div class="row">
+      <p></p>
+    </div>
+    <!-- PLAYER BUTTONS -->
+    <div class="row">
+      <div class="player-buttons large-3 columns">
+        <div class="player-ctrl play">
+          <a id="stop"><div></div></a>
+          <a id="play"><div></div></a>
+        </div>
+        <div class="player-rec">
+          <a id="rec"><div></div></a></div>
+      </div>
+      <div class="large-9 columns"> 
+        <div class="payoff hide-for-small">
+          <h5 class="v-center">Press Rec<br/>and start recording</h5> 
+        </div>
+      </div>
+    </div><!-- PLAYER BUTTONS -->
+    <!-- TRACKS-->
+    <div class="tracks row">
+      <ul class="no-bullet large-12 columns">
+        <li class="track player">
+          <div id="gutter">
+            <div id="loading"></div>
+            <div id="handle" class="ui-slider-handle"></div>
+          </div>
+          <div class="info">
+            <h6>Nome</h6>
+            <h6 id="timeleft"></h6>
+          </div>
+          <audio>
+            <source src="sxsxsysyx.mp3" type="audio/mpeg"></source>
+          </audio>
+        </li>
+      </ul>
+    </div><!-- TRACKS-->
+    <div class="row">
+      <div class="large-12 columns">
+        <iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe>
+      </div>
+    </div>
+  </div> <!-- CONTENT -->
+
+  <!--
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  -->
+  <script src="javascripts/vendor/jquery.js"></script>
+  <script src="javascripts/foundation/foundation.js"></script>
+  <script src="javascripts/foundation/foundation.abide.js"></script>
+  <script src="javascripts/foundation/foundation.orbit.js"></script>
+  <script src="javascripts/foundation/foundation.joyride.js"></script>
+  <script src="javascripts/foundation/foundation.forms.js"></script>
+  <script src="javascripts/foundation/foundation.tooltips.js"></script>
+  <script src="javascripts/foundation/foundation.clearing.js"></script>
+  <script src="javascripts/foundation/foundation.alerts.js"></script>
+  <script src="javascripts/foundation/foundation.magellan.js"></script>
+  <script src="javascripts/foundation/foundation.placeholder.js"></script>
+  <script src="javascripts/foundation/foundation.cookie.js"></script> 
+  <script src="javascripts/foundation/foundation.interchange.js"></script>
+  <script src="javascripts/foundation/foundation.dropdown.js"></script>
+  <script src="javascripts/foundation/foundation.section.js"></script>
+  <script src="javascripts/foundation/foundation.reveal.js"></script>
+  <script src="javascripts/foundation/foundation.topbar.js"></script>
+  <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
+  <script src="javascripts/player.js"></script>
+  
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>

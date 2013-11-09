@@ -4,7 +4,8 @@
   "description": "Curly Brackets",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -13,9 +14,18 @@
   "dependencies": {
     "nko": "*",
     "express": "~3.4.4",
-    "jade": "~0.35.0"
+    "jade": "~0.35.0",
+    "git-fs-db": "~0.2.0",
+    "js-git": "~0.5.4",
+    "git-node-platform": "~0.1.4",
+    "async": "~0.2.9"
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "supertest": "~0.8.1",
+    "should": "~2.0.2"
   }
 }
