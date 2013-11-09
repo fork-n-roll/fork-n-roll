@@ -34,7 +34,7 @@ if ('development' == app.get('env') || 'production' == app.get('env')) {
 }
 
 app.get('/users', user.list);
-app.get('/songs/:sha', songs.show);
+app.get('/songs/:hash', songs.show);
 
 http.createServer(app).listen(app.get('port'), function(err) {
   if (err) { console.error(err); process.exit(-1); }

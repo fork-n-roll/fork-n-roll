@@ -2,3 +2,4 @@
 /frontend/.sass-cache
 .DS_Store
 npm-debug.log
+/db/*.git

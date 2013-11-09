@@ -1,4 +1,11 @@
+var Song = require('../models/song');
+var song = new Song('db/test.git');
+
 // GET /songs/123
-exports.show = function(req, res) {
-  res.json({name: 'song ' + req.params.sha});
+exports.show = function(req, res, next) {
+  song.load(req.params.hash, function(err, song) {
+    if (err && err.code === 'ENOENT') return res.json(404, 'not found');
+    if (err) return next(err);
+    res.json(song);
+  });
 };
