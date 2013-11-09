@@ -4,7 +4,8 @@
   "description": "Curly Brackets",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,8 @@
   },
   "engines": {
     "node": "0.10.x"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0"
   }
 }
