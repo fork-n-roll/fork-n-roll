@@ -3,3 +3,4 @@
 /frontend/sxsxsysyx.mp3
 .DS_Store
 npm-debug.log
+/db/*.git

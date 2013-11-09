@@ -14,7 +14,11 @@
   "dependencies": {
     "nko": "*",
     "express": "~3.4.4",
-    "jade": "~0.35.0"
+    "jade": "~0.35.0",
+    "git-fs-db": "~0.2.0",
+    "js-git": "~0.5.4",
+    "git-node-platform": "~0.1.4",
+    "async": "~0.2.9"
   },
   "engines": {
     "node": "0.10.x"

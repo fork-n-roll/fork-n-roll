@@ -3,6 +3,7 @@ require('nko')('fagdshmxJpp-hZcg');
 
 var express = require('express');
 var user = require('./routes/user');
+var songs = require('./routes/songs');
 var http = require('http');
 var path = require('path');
 
@@ -33,6 +34,7 @@ if ('development' == app.get('env') || 'production' == app.get('env')) {
 }
 
 app.get('/users', user.list);
+app.get('/songs/:hash', songs.show);
 
 http.createServer(app).listen(app.get('port'), function(err) {
   if (err) { console.error(err); process.exit(-1); }
