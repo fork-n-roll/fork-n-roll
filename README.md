@@ -4,6 +4,15 @@
 # getting the code
 git clone git@github.com:nko4/curly-brackets.git && cd ./curly-brackets/
 
+# install zurb foundation
+gem install zurb-foundation
+
+# install compass
+gem install compass
+
+# in another shell watch sass files for updates
+compass watch frontend
+
 # developing
 npm install
 npm start
