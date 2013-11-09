@@ -1,8 +1,10 @@
-var helper = require('../test_helper');
+var should = require('should');
+var request = require('supertest');
+var server = require('../../server');
 
 describe('users', function() {
   it('responds with success', function(done) {
-    helper.request(helper.server)
+    request(server)
       .get('/users')
       .expect('Content-Type', /json/)
       .expect(200)
