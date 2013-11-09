@@ -4709,8 +4709,8 @@ label.error {
   display: block;
   width: 16px;
   height: 0;
-  -webkit-box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
-  box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
+  -webkit-box-shadow: 0 10px 0 1px #333333, 0 16px 0 1px #333333, 0 22px 0 1px #333333;
+  box-shadow: 0 10px 0 1px #333333, 0 16px 0 1px #333333, 0 22px 0 1px #333333;
 }
 /* line 208, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded {
@@ -4727,8 +4727,8 @@ label.error {
 }
 /* line 216, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_top-bar.scss */
 .top-bar.expanded .toggle-topbar a span {
-  -webkit-box-shadow: 0 10px 0 1px #888888, 0 16px 0 1px #888888, 0 22px 0 1px #888888;
-  box-shadow: 0 10px 0 1px #888888, 0 16px 0 1px #888888, 0 22px 0 1px #888888;
+  -webkit-box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
+  box-shadow: 0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white;
 }
 
 /* line 234, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_top-bar.scss */
@@ -7301,4 +7301,147 @@ a.th {
 /* line 148, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_dropdown.scss */
 .f-dropdown.large {
   max-width: 800px;
+}
+
+/* line 3, ../sass/_player.scss */
+.player-buttons .player-ctrl {
+  width: 96px;
+  height: 96px;
+  float: left;
+  display: block;
+}
+/* line 8, ../sass/_player.scss */
+.player-buttons .player-ctrl a#play, .player-buttons .player-ctrl a#stop {
+  display: block;
+  padding: 34px;
+  background: #333;
+}
+/* line 14, ../sass/_player.scss */
+.player-buttons .player-ctrl a#play:hover, .player-buttons .player-ctrl a#stop:hover {
+  background: #666;
+}
+/* line 17, ../sass/_player.scss */
+.player-buttons .player-ctrl a#stop div {
+  width: 28px;
+  height: 28px;
+  background: #fff;
+}
+/* line 22, ../sass/_player.scss */
+.player-buttons .player-ctrl a#play div {
+  width: 0;
+  height: 0;
+  border-top: solid 14px transparent;
+  border-bottom: solid 14px transparent;
+  border-left: solid 1em #fff;
+  margin-left: 8px;
+}
+/* line 31, ../sass/_player.scss */
+.player-buttons .player-rec {
+  width: 96px;
+  height: 96px;
+  float: left;
+  display: block;
+}
+/* line 36, ../sass/_player.scss */
+.player-buttons .player-rec a#rec {
+  display: block;
+  padding: 34px;
+  background: #333;
+}
+/* line 40, ../sass/_player.scss */
+.player-buttons .player-rec a#rec div {
+  width: 28px;
+  height: 28px;
+  background: red;
+  border-radius: 14px;
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+}
+/* line 49, ../sass/_player.scss */
+.player-buttons .player-rec a#rec:hover {
+  background: #666;
+}
+
+/* line 54, ../sass/_player.scss */
+.inactive {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+/* line 60, ../sass/_player.scss */
+.player-buttons .player-ctrl.stop #play {
+  display: none;
+}
+
+/* line 63, ../sass/_player.scss */
+.player-buttons .player-ctrl.play #stop {
+  display: none;
+}
+
+/* line 66, ../sass/_player.scss */
+.player {
+  padding-left: 96px;
+}
+/* line 68, ../sass/_player.scss */
+.player #gutter {
+  border-radius: 0;
+  height: 96px;
+  background: #f4f4f4;
+  border: none;
+}
+/* line 73, ../sass/_player.scss */
+.player #gutter #handle {
+  top: 0px;
+  height: 96px;
+  background-color: #333333;
+  width: 4px;
+  margin-left: 0;
+}
+/* line 80, ../sass/_player.scss */
+.player #gutter .ui-slider-range {
+  background: #ffcc00;
+}
+/* line 84, ../sass/_player.scss */
+.player .info {
+  z-index: 9000;
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 146px;
+  bottom: 0;
+  right: 0;
+}
+/* line 93, ../sass/_player.scss */
+.player .info h6 {
+  margin: 0;
+}
+/* line 94, ../sass/_player.scss */
+.player .info #timeleft {
+  opacity: 0.3;
+}
+
+/* line 2, ../sass/_main.scss */
+.container {
+  margin: 2em 0;
+}
+
+/* line 5, ../sass/_main.scss */
+.payoff {
+  height: 96px;
+}
+/* line 7, ../sass/_main.scss */
+.payoff h5 {
+  text-transform: uppercase;
+}
+
+/* line 11, ../sass/_main.scss */
+.v-center {
+  height: 50%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
