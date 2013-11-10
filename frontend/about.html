@@ -50,12 +50,25 @@
         <h4>The project</h4>
         <p><strong>Fork and roll</strong> a is music recorder.<br/>You can share the URL page with your friends and start to play together.<br>
         <img src="/images/exp.png">
+        <blockquote>Without music to decorate it, time is just a bunch of boring production deadlines or dates by which bills must be paid.<br/><cite>Frank Zappa</cite></blockquote>
         </p>
       </div>
-      <div class="large-2 columns"></div>
-      <div class="large-5 columns">
+      <div class="large-6 large-offset-1 columns">
         <h4>Technologies</h4>
-        <p>We have used Git as Database...</p>
+        <ul class="no-bullet">
+          <li><a href="http://expressjs.com/">Express</a></li>
+          <li><a href="https://github.com/creationix/js-git">js-git</a></li>
+          <li><a href="https://github.com/technoweenie/coffee-resque">Coffee-Resque</a></li>
+          <li><a href="http://www.ffmpeg.org/">FFmpeg</a></li>
+          <li><a href="https://github.com/mattdiamond/Recorderjs">Recorder.js</a></li>
+          <li><a href="https://github.com/jeanphix/Tracks.js">Tracks.js</a></li>
+          <li><a href="http://foundation.zurb.com/">Zurb Foundation</a></li>
+        </ul>
+        <p>
+          We used Git as a database through js-git, a JavaScript implementation of Git.
+          Each song is a commit pointing to a tree object indexing a set of tracks which make part of the composition. 
+          By adding a new track to an existing song you are creating a new commit linked to the previous commit representing the song.
+        </p>
       </div>
     </section>
   </div>
@@ -115,12 +128,7 @@
       <div class="large-12 columns">
         <hr>
         <h6>special thanks to:</h6>
-        <p>Giorgia Marenda <br/>Elena Bertolin</p>
-      </div>
-    </section>
-    <section class="row">
-      <div class="large-8 columns">
-        <blockquote>Without music to decorate it, time is just a bunch of boring production deadlines or dates by which bills must be paid.<br/><cite>Frank Zappa</cite></blockquote>
+        <p>Giorgia Marenda (video editing and popcorn burning)<br/>Elena Bertolin (logo designing)</p>
       </div>
     </section>
   </div>
