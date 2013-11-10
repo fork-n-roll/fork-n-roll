@@ -39,6 +39,8 @@ function stopRecording() {
     // create WAV download link using audio data blob
     createDownloadLink();
     recorder.clear();
+    // show save-form
+    $('#save-form').show();
   }
 }
 
@@ -54,43 +56,31 @@ function createDownloadLink() {
 
     loadAudio();
 
-    var url = URL.createObjectURL(blob);
-    var li = document.createElement('li');
-    var au = document.createElement('audio');
-    var hf = document.createElement('a');
-    
-    au.controls = true;
-    au.src = url;
-    hf.href = url;
-    hf.download = new Date().toISOString() + '.wav';
-    hf.innerHTML = hf.download;
-    li.appendChild(au);
-    li.appendChild(hf);
-    recordingslist.appendChild(li);
+    $('#save').click(function() {
+      var fd = new FormData();
+      fd.append('track', blob, new Date().toISOString() + '.wav');
+      fd.append('name', $('#choose-a-name input[name=\'name\']').val());
+      fd.append('parent', $('#choose-a-name input[name=\'parent\']').val());
 
-    var fd = new FormData();
-    fd.append('track', blob, new Date().toISOString() + '.wav');
-    fd.append('name', 'guitar');
-
-    $.ajax({
-      type: 'POST',
-      url: '/tracks',
-      data: fd,
-      processData: false,
-      contentType: false
-    }).done(function(data) {
-      console.log(data);
+      $.ajax({
+        type: 'POST',
+        url: '/tracks',
+        data: fd,
+        processData: false,
+        contentType: false
+      }).done(function(hash) {
+        $.route('#/songs/' + hash);
+      });
     });
   });
 }
 
 window.onload = function init() {
-  try {
-    // webkit shim
-    window.AudioContext = window.AudioContext || window.webkitAudioContext;
-    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
-    window.URL = window.URL || window.webkitURL;
-    
+  try {                       
+    window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
+    navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+    window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
+
     audioContext = new AudioContext;
     console.log('Audio context set up.');
     console.log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'available.' : 'not present!'));
@@ -98,7 +88,7 @@ window.onload = function init() {
     // TODO: beautiful alert
     alert('No web audio support in this browser!');
   }
-  
+
   navigator.getUserMedia({audio: true}, startUserMedia, function(e) {
     console.log('No live audio input: ' + e);
   });

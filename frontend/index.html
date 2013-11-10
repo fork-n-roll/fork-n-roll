@@ -89,12 +89,13 @@
         </div>
       </div>
     </div><!-- TRACKS-->
-    <div class="row">
+    <div style="display: none" id="save-form" class="row">
       <div class="large-12 columns text-right">
         <div class="player-save">
           <div id="choose-a-name">
             <h6 class="text-left">Choose a Name</h6>
-            <input type="text">
+            <input type="text" name="name" placeholder="Guitar">
+            <input type="hidden" name="parent">
           </div>
           <a id="save" class="has-tip tip-bottom" data-tooltip title="Save your track!"><div></div></a>
         </div>

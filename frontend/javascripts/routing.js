@@ -26,6 +26,9 @@ $(document).ready(function() {
           })).appendTo(root);
         });
 
+        $('#choose-a-name input[name=\'name\']').val('');
+        $('#choose-a-name input[name=\'parent\']').val(res.parents[0]);
+
         loadAudio();
       })
     }
