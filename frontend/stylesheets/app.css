@@ -6488,11 +6488,11 @@ ul.pagination li {
 /* line 66, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .panel {
   border-style: solid;
-  border-width: 1px;
-  border-color: #d9d9d9;
+  border-width: 0;
+  border-color: #1a1a1a;
   margin-bottom: 1.25em;
   padding: 1.25em;
-  background: #f2f2f2;
+  background: #333333;
 }
 /* line 44, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .panel > :first-child {
@@ -6502,9 +6502,9 @@ ul.pagination li {
 .panel > :last-child {
   margin-bottom: 0;
 }
-/* line 50, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
+/* line 51, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6, .panel p {
-  color: #333333;
+  color: white;
 }
 /* line 54, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .panel h1, .panel h2, .panel h3, .panel h4, .panel h5, .panel h6 {
@@ -6518,7 +6518,7 @@ ul.pagination li {
 /* line 68, ../../../../.rbenv/versions/1.9.3-p448/lib/ruby/gems/1.9.1/gems/zurb-foundation-4.3.2/scss/foundation/components/_panels.scss */
 .panel.callout {
   border-style: solid;
-  border-width: 1px;
+  border-width: 0;
   border-color: #2284a1;
   margin-bottom: 1.25em;
   padding: 1.25em;
@@ -7525,6 +7525,11 @@ a.th {
 }
 
 /* line 38, ../sass/_main.scss */
+.panel {
+  margin: 2em 0;
+}
+
+/* line 39, ../sass/_main.scss */
 .parent-message {
   margin-bottom: 2.5em;
 }
