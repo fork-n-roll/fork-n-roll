@@ -32,7 +32,7 @@ $(document).ready(function() {
         $('#choose-a-name input[name=\'parent\']').val(urlSegments[1]);
 
         // share link
-        $('#share-container a').attr('data-url', '#/songs/' + urlSegments[1]);
+        $('#share-container a').attr('data-url', 'http://curly-brackets.2013.nodeknockout.com/#/songs/' + urlSegments[1]);
 
         // parent link
         if (res.parents.length > 0) {
