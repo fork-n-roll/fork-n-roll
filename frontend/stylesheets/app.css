@@ -7379,36 +7379,39 @@ a.th {
 }
 
 /* line 66, ../sass/_player.scss */
+.tracks-container {
+  margin-left: 96px;
+}
+
+/* line 69, ../sass/_player.scss */
 #gutter {
   position: relative;
-  padding-left: 0.9375em;
-  padding-right: 0.9375em;
-  width: 100%;
-  float: left;
-  position: relative;
-  padding-left: 112px;
   height: 100%;
 }
-/* line 71, ../sass/_player.scss */
+/* line 72, ../sass/_player.scss */
 #gutter ul {
   margin-bottom: 0;
 }
-/* line 73, ../sass/_player.scss */
+/* line 74, ../sass/_player.scss */
 #gutter ul .player {
   border-radius: 0;
   position: relative;
   height: 96px;
-  background: #f4f4f4;
+  background: #ffffff;
   border: none;
 }
-/* line 79, ../sass/_player.scss */
-#gutter ul .player .ui-slider-range {
-  background: #ffcc00;
+/* line 81, ../sass/_player.scss */
+#gutter ul .player .loading {
+  height: 96px;
 }
-/* line 82, ../sass/_player.scss */
+/* line 83, ../sass/_player.scss */
+#gutter ul .player .loading .ui-progressbar-value {
+  background: #f4f4f4;
+}
+/* line 87, ../sass/_player.scss */
 #gutter ul .player .info {
   z-index: 8000;
-  height: 50%;
+  height: 1.4em;
   margin: auto;
   position: absolute;
   top: 0;
@@ -7416,15 +7419,15 @@ a.th {
   bottom: 0;
   right: 0;
 }
-/* line 91, ../sass/_player.scss */
+/* line 96, ../sass/_player.scss */
 #gutter ul .player .info h6 {
   margin: 0;
 }
-/* line 92, ../sass/_player.scss */
+/* line 97, ../sass/_player.scss */
 #gutter ul .player .info #timeleft {
   opacity: 0.3;
 }
-/* line 96, ../sass/_player.scss */
+/* line 101, ../sass/_player.scss */
 #gutter #handle {
   position: absolute;
   top: 0px;
@@ -7433,6 +7436,10 @@ a.th {
   width: 4px;
   margin-left: 0;
   z-index: 9000;
+}
+/* line 110, ../sass/_player.scss */
+#gutter .ui-slider-range {
+  background: #ffcc00;
 }
 
 /* line 2, ../sass/_main.scss */
