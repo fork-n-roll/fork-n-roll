@@ -10,29 +10,49 @@ function startUserMedia(stream) {
   
   recorder = new Recorder(input);
   console.log('Recorder initialised.');
+
+  $(".player-rec").removeClass('inactive');
+
+  $("#rec").click(startRecording);
 }
 
-function startRecording(button) {
-  recorder && recorder.record();
-  button.disabled = true;
-  button.nextElementSibling.disabled = false;
-  console.log('Recording...');
+function startRecording() {
+  if (typeof recorder !== 'undefined' && !$(".player-rec").hasClass('inactive')) {
+    $(".player-rec").addClass('inactive');
+    $("#stop").click(stopRecording);
+    recorder.record();
+    player.play();
+    console.log('Recording...');
+  }
 }
 
-function stopRecording(button) {
-  recorder && recorder.stop();
-  button.disabled = true;
-  button.previousElementSibling.disabled = false;
-  console.log('Stopped recording.');
-  
-  // create WAV download link using audio data blob
-  createDownloadLink();
-  
-  recorder.clear();
+function stopRecording() {
+  if (typeof recorder !== 'undefined') {
+    $(".player-rec").removeClass('inactive');
+    $("#stop").unbind('click');
+    recorder.stop();
+    player.stop();
+    console.log('Stopped recording.');
+
+    // create WAV download link using audio data blob
+    createDownloadLink();
+
+    recorder.clear();
+  }
 }
 
 function createDownloadLink() {
-  recorder && recorder.exportWAV(function(blob) {
+  recorder.exportWAV(function(blob) {
+    $('#tracks-list #new-track').remove();
+
+    $($.render($('[type=\'html/track\']').html(), {
+      id: 'new-track',
+      name: 'Untitled',
+      url: URL.createObjectURL(blob)
+    })).appendTo($('#tracks-list'));
+
+    loadAudio();
+
     var url = URL.createObjectURL(blob);
     var li = document.createElement('li');
     var au = document.createElement('audio');

@@ -21,13 +21,26 @@
 </head>
 <body>
 
+  <!-- TRACK TEMPLATE -->
+  <script type="html/track">
+  <li id="{id}" class="track player">
+    <div class="loading"></div>
+    <div class="info">
+      <h6>{name}</h6>
+    </div>
+    <audio>
+      <source src="{url}" type="audio/mpeg"></source>
+    </audio>
+  </li>
+  </script>
+
   <!-- NAV BAR -->
   <div class="contain-to-grid">
     <nav class="top-bar">
       <ul class="title-area">
         <!-- Title Area -->
         <li class="name">
-          <h1><a href="#" class="logo">Fork and Roll</a></h1>
+          <h1><a href="/" class="logo">Fork and Roll</a></h1>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -35,7 +48,7 @@
 
       <section class="top-bar-section">
         <ul class="right">
-          <li><a href="#">About</a></li>
+          <li><a href="/about.html">About</a></li>
           <li class="kolike"><iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe></li>
         </ul>
       </section>
@@ -54,8 +67,8 @@
           <a id="stop"><div></div></a>
           <a id="play"><div></div></a>
         </div>
-        <div class="player-rec">
-          <a id="rec" onclick="startRecording(this);"><div></div></a></div>
+        <div class="player-rec inactive">
+          <a id="rec"><div></div></a>
         </div>
       </div>
       <div class="large-4 columns"> 
@@ -73,41 +86,19 @@
         <div class="tracks-container">
           <div id="gutter">
             <div id="handle" class="ui-slider-handle"></div>
-            <ul class="no-bullet">
-              <li id="track01" class="track player">
-                <div class="loading"></div>
-                <div class="info">
-                  <h6>Synth</h6>
-                </div>
-                <audio>
-                  <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/synth.mp3" type="audio/mpeg"></source>
-                </audio>
-              </li>
-              <li id="track02" class="track player">
-                <div class="loading"></div>
-                <div class="info">
-                  <h6>Drum</h6>
-                </div>
-                <audio>
-                  <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/drum.mp3" type="audio/mpeg"></source>
-                </audio>
-              </li>
-            </ul>
+            <ul id="tracks-list" class="no-bullet"></ul>
           </div>
         </div>
       </div>
     </div><!-- TRACKS-->
-
-    <button onclick="startRecording(this);">record</button>
-    <button onclick="stopRecording(this);" disabled>stop</button>
 
     <h2>Recordings</h2>
     <ul id="recordingslist"></ul>
 
     <div class="row">
       <div class="large-12 columns">
-        <a href="#/test">Link test</a>
-        <a href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">Test song</a>
+        <a class="route" href="#/test">Link test</a>
+        <a class="route" href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">Test song</a>
       </div>
     </div>
   </div> <!-- CONTENT -->
@@ -131,6 +122,7 @@
   <script src="javascripts/foundation/foundation.topbar.js"></script>
   <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
   <script src="javascripts/vendor/jquery.riot.js"></script>
+  <script src="javascripts/vendor/render.js"></script>
   <script src="javascripts/vendor/recorder.js"></script>
   <script src="javascripts/vendor/tracks.js"></script>
   <script src="javascripts/routing.js"></script>
