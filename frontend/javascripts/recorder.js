@@ -80,8 +80,9 @@ function createDownloadLink() {
         $('#save-form').hide();
         $('#save').removeClass('inactive');
       });
+
+      $('#save').unbind('click');
     });
-    $('#save').unbind('click');
   });
 }
 
