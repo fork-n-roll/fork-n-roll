@@ -70,8 +70,16 @@ function loadAudio() {
       $("#stop").click(player.stop);
     })
     .on('play', player.onPlay)
-    .on('pause', player.onStopPause)
-    .on('ended', player.onStopPause)
+    .on('pause', function() {
+      if (!recording) {
+        player.onStopPause();
+      }
+    })
+    .on('ended', function() {
+      if (!recording) {
+        player.onStopPause();
+      }
+    })
     .on('timeupdate', function() {
       $('.timeleft').text(tracks.humanizeTime(this.longest.attr('currentTime')));
 
