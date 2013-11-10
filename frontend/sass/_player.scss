@@ -63,34 +63,51 @@
   #stop { display: none; }
 }
 // TRACK
-.player {
-  padding-left: 96px; 
-  #gutter {
-    border-radius: 0;
-    height: 96px;
-    background: #f4f4f4;
-    border: none;
-    #handle {
-      top: 0px;
+.tracks-container {
+  margin-left: 96px;
+}
+#gutter {
+  position: relative;
+  height: 100%;
+  ul {
+    margin-bottom:0; 
+    .player {
+      border-radius: 0;
+      position: relative;
       height: 96px;
-      background-color: rgb(51, 51, 51);
-      width: 4px;
-      margin-left: 0;
-    }
-    .ui-slider-range {
-      background: #ffcc00;
+      background: #ffffff;
+      border: none;
+      
+      .loading {
+        height: 96px;
+        .ui-progressbar-value {
+          background: #f4f4f4;
+        }
+      }
+      .info {
+        z-index: 8000;
+        height: 1.4em;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 22px;
+        bottom: 0;
+        right: 0;
+        h6 { margin: 0; }
+        #timeleft { opacity: 0.3; }
+      }
     }
   }
-  .info {
-      z-index: 9000;
-      height: 50%;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      left: 146px;
-      bottom: 0;
-      right: 0;
-      h6 { margin: 0; }
-      #timeleft { opacity: 0.3; }
-    }
+  #handle {
+    position: absolute;
+    top: 0px;
+    height: 100%;
+    background-color: rgb(51, 51, 51);
+    width: 4px;
+    margin-left: 0;
+    z-index: 9000;
+  }
+  .ui-slider-range {
+    background: #ffcc00;
+  }
 }

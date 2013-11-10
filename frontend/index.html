@@ -36,6 +36,7 @@
       <section class="top-bar-section">
         <ul class="right">
           <li><a href="#">About</a></li>
+          <li class="kolike"><iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe></li>
         </ul>
       </section>
     </nav>
@@ -49,48 +50,64 @@
     <!-- PLAYER BUTTONS -->
     <div class="row">
       <div class="player-buttons large-3 columns">
-        <div class="player-ctrl play">
-          <a id="stop" ><div></div></a>
+        <div class="player-ctrl play inactive">
+          <a id="stop"><div></div></a>
           <a id="play"><div></div></a>
         </div>
         <div class="player-rec">
           <a id="rec" onclick="startRecording(this);"><div></div></a></div>
-      </div>
-      <div class="large-9 columns"> 
-        <div class="payoff hide-for-small">
-          <h5 class="v-center">Press Rec<br/>and start recording</h5> 
         </div>
+      </div>
+      <div class="large-4 columns"> 
+        <div class="payoff hide-for-small">
+          <h5 class="v-center has-tip tip-bottom" data-tooltip title="<img src='images/headset.png' /><br/>Avoid feedback!<br/> Be Happy.">Put Your headphones on<br/>and press rec</h5> 
+        </div>
+      </div>
+      <div class="large-5 columns text-right">
+        <h4 class="timeleft">00:00</h4>
       </div>
     </div><!-- PLAYER BUTTONS -->
     <!-- TRACKS-->
     <div class="tracks row">
-      <ul class="no-bullet large-12 columns">
-        <li class="track player">
+      <div class="large-12 columns">
+        <div class="tracks-container">
           <div id="gutter">
-            <div id="loading"></div>
             <div id="handle" class="ui-slider-handle"></div>
+            <ul class="no-bullet">
+              <li id="track01" class="track player">
+                <div class="loading"></div>
+                <div class="info">
+                  <h6>Synth</h6>
+                </div>
+                <audio>
+                  <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/synth.mp3" type="audio/mpeg"></source>
+                </audio>
+              </li>
+              <li id="track02" class="track player">
+                <div class="loading"></div>
+                <div class="info">
+                  <h6>Drum</h6>
+                </div>
+                <audio>
+                  <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/drum.mp3" type="audio/mpeg"></source>
+                </audio>
+              </li>
+            </ul>
           </div>
-          <div class="info">
-            <h6>Nome</h6>
-            <h6 id="timeleft"></h6>
-          </div>
-          <audio>
-            <source src="sxsxsysyx.mp3" type="audio/mpeg"></source>
-          </audio>
-        </li>
-      </ul>
-      <button onclick="startRecording(this);">record</button>
-      <button onclick="stopRecording(this);" disabled>stop</button>
-
-      <h2>Recordings</h2>
-      <ul id="recordingslist"></ul>
-      
-      <h2>Log</h2>
-      <pre id="log"></pre>
+        </div>
+      </div>
     </div><!-- TRACKS-->
+
+    <button onclick="startRecording(this);">record</button>
+    <button onclick="stopRecording(this);" disabled>stop</button>
+
+    <h2>Recordings</h2>
+    <ul id="recordingslist"></ul>
+
     <div class="row">
       <div class="large-12 columns">
-        <iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe>
+        <a href="#/test">Link test</a>
+        <a href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">Test song</a>
       </div>
     </div>
   </div> <!-- CONTENT -->
@@ -113,9 +130,12 @@
   <script src="javascripts/foundation/foundation.reveal.js"></script>
   <script src="javascripts/foundation/foundation.topbar.js"></script>
   <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
+  <script src="javascripts/vendor/jquery.riot.js"></script>
   <script src="javascripts/vendor/recorder.js"></script>
-  <script src="javascripts/recorder.js"></script>
+  <script src="javascripts/vendor/tracks.js"></script>
+  <script src="javascripts/routing.js"></script>
   <script src="javascripts/player.js"></script>
+  <script src="javascripts/recorder.js"></script>
 
   <script>
     $(document).foundation();
