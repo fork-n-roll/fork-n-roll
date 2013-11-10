@@ -1,7 +1,7 @@
 {
-  "name": "nko4-curly-brackets",
-  "version": "0.0.0",
-  "description": "Curly Brackets",
+  "name": "Fork 'n' Roll",
+  "version": "0.0.2",
+  "description": "Record now!",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
