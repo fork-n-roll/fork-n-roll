@@ -1,5 +1,5 @@
 var Song = require('../models/song');
-var song = new Song('db/test.git');
+var song = new Song(process.env.GIT_PATH || 'db/test.git');
 
 // GET /songs/123
 exports.show = function(req, res, next) {
