@@ -1,6 +1,6 @@
 /node_modules
 /frontend/.sass-cache
-/frontend/sxsxsysyx.mp3
+/frontend/tracks
 .DS_Store
 npm-debug.log
 /db/*.git
