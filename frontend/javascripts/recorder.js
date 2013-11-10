@@ -12,17 +12,17 @@ function startUserMedia(stream) {
   recorder = new Recorder(input);
   console.log('Recorder initialised.');
 
-  $(".player-rec").removeClass('inactive');
+  $('.player-rec').removeClass('inactive');
 
-  $("#rec").click(startRecording);
+  $('#rec').click(startRecording);
 }
 
 function startRecording() {
-  if (typeof recorder !== 'undefined' && !$(".player-rec").hasClass('inactive')) {
+  if (typeof recorder !== 'undefined' && !$('.player-rec').hasClass('inactive')) {
     recording = true;
-    $(".player-rec").addClass('inactive');
-    $(".player-ctrl").removeClass('inactive');
-    $("#stop").click(stopRecording);
+    $('.player-rec').addClass('inactive');
+    $('.player-ctrl').removeClass('inactive');
+    $('#stop').click(stopRecording);
     recorder.record();
     player.play();
     player.onPlay();
@@ -33,8 +33,8 @@ function startRecording() {
 function stopRecording() {
   if (typeof recorder !== 'undefined') {
     recording = false;
-    $(".player-rec").removeClass('inactive');
-    $("#stop").unbind('click');
+    $('.player-rec').removeClass('inactive');
+    $('#stop').unbind('click');
     recorder.stop();
     player.stop();
     player.onStopPause();
@@ -67,6 +67,8 @@ function createDownloadLink() {
 
       $('.preloader').show();
       $('#save').addClass('inactive');
+      $('.player-rec').addClass('inactive');
+      $('.player-ctrl').addClass('inactive');
 
       $.ajax({
         type: 'POST',
@@ -79,6 +81,8 @@ function createDownloadLink() {
         $('.preloader').hide();
         $('#save-form').hide();
         $('#save').removeClass('inactive');
+        $('.player-rec').removeClass('inactive');
+        $('.player-ctrl').removeClass('inactive');
       });
 
       $('#save').unbind('click');
