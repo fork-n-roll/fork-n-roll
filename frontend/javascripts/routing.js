@@ -27,9 +27,14 @@ $(document).ready(function() {
 
         console.log(res);
 
+        // save form update
         $('#choose-a-name input[name=\'name\']').val('');
         $('#choose-a-name input[name=\'parent\']').val(urlSegments[1]);
 
+        // share link
+        $('#share-container a').attr('data-url', '#/songs/' + urlSegments[1]);
+
+        // parent link
         if (res.parents.length > 0) {
           $('#parent-container a').attr('href', '#/songs/' + res.parents[0]);
           $('#parent-container a').html(res.parents[0]);
