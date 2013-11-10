@@ -1,5 +1,6 @@
 var audioContext;
 var recorder;
+var recording = false;
 
 function startUserMedia(stream) {
   var input = audioContext.createMediaStreamSource(stream);
@@ -18,6 +19,7 @@ function startUserMedia(stream) {
 
 function startRecording() {
   if (typeof recorder !== 'undefined' && !$(".player-rec").hasClass('inactive')) {
+    recording = true;
     $(".player-rec").addClass('inactive');
     $(".player-ctrl").removeClass('inactive');
     $("#stop").click(stopRecording);
@@ -30,6 +32,7 @@ function startRecording() {
 
 function stopRecording() {
   if (typeof recorder !== 'undefined') {
+    recording = false;
     $(".player-rec").removeClass('inactive');
     $("#stop").unbind('click');
     recorder.stop();
@@ -48,7 +51,7 @@ function createDownloadLink() {
   recorder.exportWAV(function(blob) {
     $('#tracks-list #new-track').remove();
 
-    $($.render($('[type=\'html/track\']').html(), {
+    $($.render($('[type=\'html/new-track\']').html(), {
       id: 'new-track',
       name: 'Untitled',
       url: URL.createObjectURL(blob)
@@ -77,6 +80,8 @@ function createDownloadLink() {
         $('#save-form').hide();
         $('#save').removeClass('inactive');
       });
+
+      $('#save').unbind('click');
     });
   });
 }
