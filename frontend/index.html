@@ -26,6 +26,19 @@
 </head>
 <body>
 
+<!-- NEW TRACK TEMPLATE -->
+  <script type="html/new-track">
+  <li id="{id}" class="track player">
+    <div class="loading"></div>
+    <div class="info">
+      <h6>{name}</h6>
+    </div>
+    <audio>
+      <source src="{url}" type="audio/wav"></source>
+    </audio>
+  </li>
+  </script>
+
   <!-- TRACK TEMPLATE -->
   <script type="html/track">
   <li id="{id}" class="track player">
@@ -34,7 +47,9 @@
       <h6>{name}</h6>
     </div>
     <audio>
-      <source src="{url}" type="audio/mpeg"></source>
+      <source src="{urlMp3}" type="audio/mpeg3"></source>
+      <source src="{urlAac}" type="audio/aac"></source>
+      <source src="{urlOgg}" type="audio/ogg"></source>
     </audio>
   </li>
   </script>
@@ -94,6 +109,7 @@
         </div>
       </div>
     </div><!-- TRACKS-->
+    <!-- SAVE FORM -->
     <div style="display: none" id="save-form" class="row">
       <div class="large-12 columns text-right">
         <div class="player-save">
@@ -102,12 +118,13 @@
             <input type="text" name="name" placeholder="Guitar">
             <input type="hidden" name="parent">
           </div>
-          <div class="preloader" style="display:none"></div>
+          <div class="preloader" style="display: none"></div>
           <a id="save" class="has-tip tip-bottom" data-tooltip title="Save your track!"><div></div></a>
         </div>
       </div>
-    </div>
-    <div class="row">
+    </div><!-- SAVE FORM -->
+    <!-- PARENT -->
+    <div id="parent-container" class="row" style="display: none">
       <div class="large-6 column">
         <div class="panel">
           <h6>Hey!</h6> 
@@ -118,17 +135,6 @@
         </div>
       </div>
     </div>
-    <!--
-    <h2>Recordings</h2>
-    <ul id="recordingslist"></ul>
-
-    <div class="row">
-      <div class="large-12 columns">
-        <a class="route" href="#/test">Link test</a>
-        <a class="route" href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">Test song</a>
-      </div>
-    </div>
-  -->
   </div> <!-- CONTENT -->
 
   <script src="javascripts/vendor/jquery.js"></script>
