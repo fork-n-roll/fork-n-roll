@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About - Fork and Roll</title>
+
+  
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+  <script src="javascripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+  <!-- NAV BAR -->
+  <div class="contain-to-grid">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <!-- Title Area -->
+        <li class="name">
+          <h1><a href="/index.html">Fork and Roll </a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="active"><a href="/about.html">About</a></li>
+          <li class="kolike"><iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe></li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <div class="abstract">
+
+    <header class="row">
+      <div class="large-12 columns">
+        <h2>About</h2>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="large-5 columns">
+        <h4>The project</h4>
+        <p><strong>Fork and roll</strong> a is music recorder.<br/>You can share the URL page with your friends and start to play together.<br>
+        <img src="/images/exp.png">
+        <blockquote>Without music to decorate it, time is just a bunch of boring production deadlines or dates by which bills must be paid.<br/><cite>Frank Zappa</cite></blockquote>
+        </p>
+      </div>
+      <div class="large-6 large-offset-1 columns">
+        <h4>Technologies</h4>
+        <ul class="no-bullet">
+          <li><a href="http://expressjs.com/">Express</a></li>
+          <li><a href="https://github.com/creationix/js-git">js-git</a></li>
+          <li><a href="https://github.com/technoweenie/coffee-resque">Coffee-Resque</a></li>
+          <li><a href="http://www.ffmpeg.org/">FFmpeg</a></li>
+          <li><a href="https://github.com/mattdiamond/Recorderjs">Recorder.js</a></li>
+          <li><a href="https://github.com/jeanphix/Tracks.js">Tracks.js</a></li>
+          <li><a href="http://foundation.zurb.com/">Zurb Foundation</a></li>
+        </ul>
+        <p>
+          We used Git as a database through js-git, a JavaScript implementation of Git.
+          Each song is a commit pointing to a tree object indexing a set of tracks which make part of the composition. 
+          By adding a new track to an existing song you are creating a new commit linked to the previous commit representing the song.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <div class="video" style="background: #333;">
+
+    <header class="row">
+      <div class="large-12 columns">
+        <h2 style="color: #fff;">How to</h2>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="large-12 columns">
+        <div class="flex-video">
+          <iframe width="1280" height="720" src="//www.youtube.com/embed/q6jf45FYN34" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="team">
+
+    <header class="row">
+      <div class="large-12 columns">
+        <h2>Team</h2>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="large-6 columns">
+        <div class="row ">
+          <div class="small-3 columns collapse">
+            <img src="https://2.gravatar.com/avatar/5420033d57945e871b468e1a225cb079?d=https%3A%2F%2Fidenticons.github.com%2F7bf29fb0ea4fb795eab5d5c542459d13.png&r=x&s=440">
+          </div>
+          <div class="small-9 columns">
+            <h4>Giovanni Cappellotto</h4>
+            <p>Node.js and git</p>
+          </div>
+        </div>
+      </div>
+      <p class="show-for-small"></p>
+      <div class="large-6 columns">
+        <div class="row">
+          <div class="small-3 columns collapse">
+            <img src="https://2.gravatar.com/avatar/1224fbd11360e5b391c23107babf1c3b?d=https%3A%2F%2Fidenticons.github.com%2F7a210546440d75b72ec43b603d350a4d.png&r=x&s=440">
+          </div>
+          <div class="small-9 columns">
+            <h4>Francesco Fraioli</h4>
+            <p>Design and HTML/CSS</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="row">
+      <div class="large-12 columns">
+        <hr>
+        <h6>special thanks to:</h6>
+        <p>Giorgia Marenda (video editing and popcorn burning)<br/>Elena Bertolin (logo designing)</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+
+  <script src="javascripts/vendor/jquery.js"></script>
+  <script src="javascripts/foundation/foundation.js"></script>
+  <script src="javascripts/foundation/foundation.abide.js"></script>
+  <script src="javascripts/foundation/foundation.orbit.js"></script>
+  <script src="javascripts/foundation/foundation.joyride.js"></script>
+  <script src="javascripts/foundation/foundation.forms.js"></script>
+  <script src="javascripts/foundation/foundation.tooltips.js"></script>
+  <script src="javascripts/foundation/foundation.clearing.js"></script>
+  <script src="javascripts/foundation/foundation.alerts.js"></script>
+  <script src="javascripts/foundation/foundation.magellan.js"></script>
+  <script src="javascripts/foundation/foundation.placeholder.js"></script>
+  <script src="javascripts/foundation/foundation.cookie.js"></script> 
+  <script src="javascripts/foundation/foundation.interchange.js"></script>
+  <script src="javascripts/foundation/foundation.dropdown.js"></script>
+  <script src="javascripts/foundation/foundation.section.js"></script>
+  <script src="javascripts/foundation/foundation.reveal.js"></script>
+  <script src="javascripts/foundation/foundation.topbar.js"></script>
+  <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
+  
+  
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
