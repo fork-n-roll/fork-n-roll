@@ -33,8 +33,8 @@ describe('song', function() {
         should.not.exist(err);
         should.exist(hash);
         song.load(hash, function(err, song) {
-          song.tracks[0].should.match(/track 02/);
-          song.tracks[1].should.match(/track 01/);
+          song.tracks[0].should.match(/track 01/);
+          song.tracks[1].should.match(/track 02/);
           song.parents.should.include(originalSong);
           done();
         });

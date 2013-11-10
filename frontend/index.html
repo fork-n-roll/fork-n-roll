@@ -14,9 +14,25 @@
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <script src="javascripts/vendor/custom.modernizr.js"></script>
-
+  <style type='text/css'>
+    ul { list-style: none; }
+    #recordingslist audio { display: block; margin-bottom: 10px; }
+  </style>
 </head>
 <body>
+
+  <!-- TRACK TEMPLATE -->
+  <script type="html/track">
+  <li id="{id}" class="track player">
+    <div class="loading"></div>
+    <div class="info">
+      <h6>{name}</h6>
+    </div>
+    <audio>
+      <source src="{url}" type="audio/mpeg"></source>
+    </audio>
+  </li>
+  </script>
 
   <!-- NAV BAR -->
   <div class="contain-to-grid">
@@ -24,7 +40,7 @@
       <ul class="title-area">
         <!-- Title Area -->
         <li class="name">
-          <h1><a href="#">Fork and Roll </a></h1>
+          <h1><a href="/" class="logo">Fork and Roll</a></h1>
         </li>
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
@@ -32,7 +48,8 @@
 
       <section class="top-bar-section">
         <ul class="right">
-          <li><a href="#">About</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li class="kolike"><iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe></li>
         </ul>
       </section>
     </nav>
@@ -40,59 +57,64 @@
 
   <!-- CONTENT -->
   <div class="container">
-    <div class="row">
-      <p></p>
-    </div>
+
     <!-- PLAYER BUTTONS -->
     <div class="row">
       <div class="player-buttons large-3 columns">
-        <div class="player-ctrl play">
+        <div class="player-ctrl play inactive">
           <a id="stop"><div></div></a>
           <a id="play"><div></div></a>
         </div>
-        <div class="player-rec">
-          <a id="rec"><div></div></a></div>
-      </div>
-      <div class="large-9 columns"> 
-        <div class="payoff hide-for-small">
-          <h5 class="v-center">Press Rec<br/>and start recording</h5> 
+        <div class="player-rec inactive">
+          <a id="rec"><div></div></a>
         </div>
+      </div>
+      <div class="large-4 columns"> 
+        <div class="payoff hide-for-small">
+          <h5 class="v-center has-tip tip-bottom" data-tooltip title="<img src='images/headset.png' /><br/>Avoid feedback!<br/> Be Happy.">Put Your headphones on<br/>and press rec</h5> 
+        </div>
+      </div>
+      <div class="large-5 columns text-right">
+        <h4 class="timeleft">00:00</h4>
       </div>
     </div><!-- PLAYER BUTTONS -->
     <!-- TRACKS-->
     <div class="tracks row">
-      <ul class="no-bullet large-12 columns">
-        <li class="track player">
-          <div id="gutter">
-            <div id="loading"></div>
-            <div id="handle" class="ui-slider-handle"></div>
-          </div>
-          <div class="info">
-            <h6>Nome</h6>
-            <h6 id="timeleft"></h6>
-          </div>
-          <audio>
-            <source src="sxsxsysyx.mp3" type="audio/mpeg"></source>
-          </audio>
-        </li>
-      </ul>
-    </div><!-- TRACKS-->
-
-    <div class="row">
-      <hr>
       <div class="large-12 columns">
-        <iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe>
+        <div class="tracks-container">
+          <div id="gutter">
+            <div id="handle" class="ui-slider-handle"></div>
+            <ul id="tracks-list" class="no-bullet"></ul>
+          </div>
+        </div>
+      </div>
+    </div><!-- TRACKS-->
+    
+    <div style="display: none" id="save-form" class="row">
+      <div class="large-12 columns text-right">
+        <div class="player-save">
+          <div id="choose-a-name">
+            <h6 class="text-left">Choose a Name</h6>
+            <input type="text" name="name" placeholder="Guitar">
+            <input type="hidden" name="parent">
+          </div>
+          <a id="save" class="has-tip tip-bottom" data-tooltip title="Save your track!"><div></div></a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-6 column">
+        <div class="panel">
+          <h6>Hey!</h6> 
+          <p class="parent-message">
+            This track have a father. Check it out the parent track!<br/>
+            <a class="route" href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">e72615a541024a9fb2d503ee9641f9ad4589ab7b</a>
+          </p>
+        </div>
       </div>
     </div>
   </div> <!-- CONTENT -->
 
-  <!--
-  <script>
-  document.write('<script src=' +
-  ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
-  '.js><\/script>')
-  </script>
-  -->
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/foundation/foundation.js"></script>
   <script src="javascripts/foundation/foundation.abide.js"></script>
@@ -111,9 +133,14 @@
   <script src="javascripts/foundation/foundation.reveal.js"></script>
   <script src="javascripts/foundation/foundation.topbar.js"></script>
   <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
+  <script src="javascripts/vendor/jquery.riot.js"></script>
+  <script src="javascripts/vendor/render.js"></script>
+  <script src="javascripts/vendor/recorder.js"></script>
+  <script src="javascripts/vendor/tracks.js"></script>
+  <script src="javascripts/routing.js"></script>
   <script src="javascripts/player.js"></script>
-  
-  
+  <script src="javascripts/recorder.js"></script>
+
   <script>
     $(document).foundation();
   </script>

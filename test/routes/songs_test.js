@@ -41,6 +41,6 @@ describe('songs', function() {
           .expect('Content-Type', /json/)
           .expect(404, done);
       });
-    })
+    });
   });
 });
