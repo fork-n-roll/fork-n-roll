@@ -19,9 +19,11 @@ function startUserMedia(stream) {
 function startRecording() {
   if (typeof recorder !== 'undefined' && !$(".player-rec").hasClass('inactive')) {
     $(".player-rec").addClass('inactive');
+    $(".player-ctrl").removeClass('inactive');
     $("#stop").click(stopRecording);
     recorder.record();
     player.play();
+    player.onPlay();
     console.log('Recording...');
   }
 }
@@ -32,11 +34,10 @@ function stopRecording() {
     $("#stop").unbind('click');
     recorder.stop();
     player.stop();
+    player.onStopPause();
     console.log('Stopped recording.');
-
     // create WAV download link using audio data blob
     createDownloadLink();
-
     recorder.clear();
   }
 }
@@ -66,6 +67,20 @@ function createDownloadLink() {
     li.appendChild(au);
     li.appendChild(hf);
     recordingslist.appendChild(li);
+
+    var fd = new FormData();
+    fd.append('track', blob, new Date().toISOString() + '.wav');
+    fd.append('name', 'guitar');
+
+    $.ajax({
+      type: 'POST',
+      url: '/tracks',
+      data: fd,
+      processData: false,
+      contentType: false
+    }).done(function(data) {
+      console.log(data);
+    });
   });
 }
 

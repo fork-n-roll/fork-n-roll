@@ -13,19 +13,13 @@ Player.prototype.onStopPause = function() {
 };
 
 Player.prototype.play = function() {
-  if (!$(".player-ctrl").hasClass('inactive')) {
+  if (typeof song !== 'undefined' && !$(".player-ctrl").hasClass('inactive')) {
     song.play();
   }
 };
 
-Player.prototype.pause = function() {
-  if (!$(".player-ctrl").hasClass('inactive')) {
-    song.pause();
-  }
-}
-
 Player.prototype.stop = function() {
-  if (!$(".player-ctrl").hasClass('inactive')) {
+  if (typeof song !== 'undefined' && !$(".player-ctrl").hasClass('inactive')) {
     song.pause();
     song.each(song.tracks, function (track) {
       track.attr('currentTime', 0);
@@ -70,7 +64,7 @@ function loadAudio() {
   song.on('canplay', function() {
       $(".player-ctrl").removeClass('inactive');
       $("#play").click(player.play);
-      $("#stop").click(player.pause);
+      $("#stop").click(player.stop);
     })
     .on('play', player.onPlay)
     .on('pause', player.onStopPause)
