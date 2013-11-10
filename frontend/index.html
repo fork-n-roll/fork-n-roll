@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Foundation 4</title>
+  <title>Fork and Roll</title>
 
   
   <link rel="stylesheet" href="stylesheets/app.css">
@@ -66,12 +66,12 @@
           <a id="play"><div></div></a>
         </div>
         <div class="player-rec inactive">
-          <a id="rec"><div></div></a>
+          <a id="rec" class="has-tip tip-right" data-tooltip title="<img src='images/headset.png' /><br/>Avoid feedback!<br/> Be Happy."><div></div></a>
         </div>
       </div>
       <div class="large-4 columns"> 
         <div class="payoff hide-for-small">
-          <h5 class="v-center has-tip tip-bottom" data-tooltip title="<img src='images/headset.png' /><br/>Avoid feedback!<br/> Be Happy.">Put Your headphones on<br/>and press rec</h5> 
+          <h5 class="v-center">Put Your headphones on<br/>and press rec</h5> 
         </div>
       </div>
       <div class="large-5 columns text-right">
@@ -98,6 +98,7 @@
             <input type="text" name="name" placeholder="Guitar">
             <input type="hidden" name="parent">
           </div>
+          <div class="preloader" style="display:none"></div>
           <a id="save" class="has-tip tip-bottom" data-tooltip title="Save your track!"><div></div></a>
         </div>
       </div>

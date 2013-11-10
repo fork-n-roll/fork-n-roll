@@ -7533,3 +7533,10 @@ a.th {
 .parent-message {
   margin-bottom: 2.5em;
 }
+
+/* line 42, ../sass/_main.scss */
+.warning {
+  position: absolute;
+  top: 0;
+  right: 67px;
+}

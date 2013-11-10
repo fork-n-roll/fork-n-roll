@@ -60,7 +60,10 @@ function createDownloadLink() {
       var fd = new FormData();
       fd.append('track', blob, new Date().toISOString() + '.wav');
       fd.append('name', $('#choose-a-name input[name=\'name\']').val());
-      fd.append('parent', $('#choose-a-name input[name=\'parent\']').val());
+      fd.append('parent_song', $('#choose-a-name input[name=\'parent\']').val());
+
+      $('.preloader').show();
+      $('#save').addClass('inactive');
 
       $.ajax({
         type: 'POST',
@@ -70,6 +73,9 @@ function createDownloadLink() {
         contentType: false
       }).done(function(hash) {
         $.route('#/songs/' + hash);
+        $('.preloader').hide();
+        $('#save-form').hide();
+        $('#save').removeClass('inactive');
       });
     });
   });

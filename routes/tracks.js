@@ -35,9 +35,11 @@ exports.create = function(req, res, next) {
     };
 
     // save new song
-    if (req.body.parent) {
-      song.addTrack(req.body.parent, trackData, callback);
+    if (req.body.parent_song) {
+      console.log('ciao');
+      song.addTrack(req.body.parent_song, trackData, callback);
     } else {
+      console.log('bye');
       song.createWithTrack(trackData, callback);
     }
   } else {
