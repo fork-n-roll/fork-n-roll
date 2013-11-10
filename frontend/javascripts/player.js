@@ -1,8 +1,41 @@
-$(document).ready(function() {
+function Player() {}
 
+Player.prototype.onPlay = function() {
+  $("#play").addClass('playing');
+  $(".player-ctrl").addClass('stop');
+  $(".player-ctrl").removeClass('play');
+};
+
+Player.prototype.onStopPause = function() {
+  $("#play").removeClass('playing');
+  $(".player-ctrl").removeClass('stop');
+  $(".player-ctrl").addClass('play');
+};
+
+Player.prototype.play = function() {
+  if (typeof song !== 'undefined' && !$(".player-ctrl").hasClass('inactive')) {
+    song.play();
+  }
+};
+
+Player.prototype.stop = function() {
+  if (typeof song !== 'undefined' && !$(".player-ctrl").hasClass('inactive')) {
+    song.pause();
+    song.each(song.tracks, function (track) {
+      track.attr('currentTime', 0);
+    });
+  }
+}
+
+var player = new Player();
+var song;
+
+function loadAudio() {
   var audioTracks = {};
   var loaded = false;
   var manualSeek = false;
+
+  song = new tracks.Tracks([]);
 
   $('.track').each(function(i, trackContainer) {
     var progressElement = $(trackContainer).children('.loading');
@@ -11,32 +44,17 @@ $(document).ready(function() {
     var track = new tracks.Track(audioElement);
     track.on('progress', function() {
       if (this.attr('buffered').length > 0) {
-        console.log('BUFFERING', trackId, this.attr('buffered').end(0));
         progressElement.progressbar('value', this.attr('buffered').end(0));
       } else {
-        console.log('WWWWWWWWW', this.attr('buffered'));
+        // NOTE: already buffered?
+        // progressElement.progressbar('value', this.attr('duration'));
       }
     }).on('loadedmetadata', function() {
-      console.log('LOADEDMETADATA', this.attr('duration'));
       progressElement.progressbar({ max: this.attr('duration') });
     });
 
     audioTracks[trackId] = track;
   });
-
-  var play = function() {
-    $("#play").addClass('playing');
-    $(".player-ctrl").addClass('stop');
-    $(".player-ctrl").removeClass('play');
-  };
-
-  var stopPause = function() {
-    $("#play").removeClass('playing');
-    $(".player-ctrl").removeClass('stop');
-    $(".player-ctrl").addClass('play');
-  };
-
-  var song = new tracks.Tracks([]);
 
   // add tracks to song
   for (var trackId in audioTracks) {
@@ -45,10 +63,12 @@ $(document).ready(function() {
 
   song.on('canplay', function() {
       $(".player-ctrl").removeClass('inactive');
+      $("#play").click(player.play);
+      $("#stop").click(player.stop);
     })
-    .on('play',play)
-    .on('pause', stopPause)
-    .on('ended', stopPause)
+    .on('play', player.onPlay)
+    .on('pause', player.onStopPause)
+    .on('ended', player.onStopPause)
     .on('timeupdate', function() {
       $('.timeleft').text(tracks.humanizeTime(this.longest.attr('currentTime')));
 
@@ -77,13 +97,4 @@ $(document).ready(function() {
       }
     })
     .preload();
-
-  $("#play").click(function() {
-    song.play();
-  });
-
-  $("#stop").click(function() {
-    song.pause();
-  });
-
-});
+}
