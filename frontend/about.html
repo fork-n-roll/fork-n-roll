@@ -10,14 +10,12 @@
 
   
   <link rel="stylesheet" href="stylesheets/app.css">
-  <link rel="stylesheet" href="stylesheets/vendor/no-theme/jquery-ui-1.10.3.custom.css">
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
   <script src="javascripts/vendor/custom.modernizr.js"></script>
 
 </head>
 <body>
-
   <!-- NAV BAR -->
   <div class="contain-to-grid">
     <nav class="top-bar">
@@ -32,83 +30,57 @@
 
       <section class="top-bar-section">
         <ul class="right">
-          <li><a href="/about.html">About</a></li>
+          <li class="active"><a href="/about.html">About</a></li>
           <li class="kolike"><iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe></li>
         </ul>
       </section>
     </nav>
   </div>
 
-  <!-- CONTENT -->
-  <div class="container">
-    <div class="row">
-      <p></p>
-    </div>
-    <!-- PLAYER BUTTONS -->
-    <div class="row">
-      <div class="player-buttons large-3 columns">
-        <div class="player-ctrl play inactive">
-          <a id="stop"><div></div></a>
-          <a id="play"><div></div></a>
-        </div>
-        <div class="player-rec">
-          <a id="rec"><div></div></a>
-        </div>
-      </div>
-      <div class="large-4 columns"> 
-        <div class="payoff hide-for-small">
-          <h5 class="v-center has-tip tip-bottom" data-tooltip title="<img src='images/headset.png' /><br/>Avoid feedback!<br/> Be Happy.">Put Your headphones on<br/>and press rec</h5> 
-        </div>
-      </div>
-      <div class="large-5 columns text-right">
-        <h4 class="timeleft">00:00</h4>
-      </div>
-    </div><!-- PLAYER BUTTONS -->
-    <!-- TRACKS-->
-    <div class="tracks row">
-      <div class="large-12 columns">
-        <div class="tracks-container">
-          <div id="gutter">
-            <div id="handle" class="ui-slider-handle"></div>
-            <ul class="no-bullet">
-              <li id="track01" class="track player">
-                <div class="loading"></div>
-                <div class="info">
-                  <h6>Synth</h6>
-                  
-                </div>
-                <audio>
-                  <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/synth.mp3" type="audio/mpeg"></source>
-                </audio>
-              </li>
-              <li id="track02" class="track player">
-                <div class="loading"></div>
-                <div class="info">
-                  <h6>Drum</h6>
-                </div>
-                <audio>
-                  <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/drum.mp3" type="audio/mpeg"></source>
-                </audio>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div><!-- TRACKS-->
-    <div class="row">
-      <div class="large-12 columns">
-        
-      </div>
-    </div>
-  </div> <!-- CONTENT -->
+  <div class="abstract">
 
-  <!--
+    <header class="row">
+      <div class="large-12 columns">
+        <h2>About</h2>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="large-8 columns">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="video" style="background: #333;">
+
+    <header class="row">
+      <div class="large-12 columns">
+        <h2 style="color: #fff;">How to</h2>
+      </div>
+    </header>
+
+    <section class="row">
+      <div class="large-12 columns">
+        <div class="flex-video">
+          <iframe width="1280" height="720" src="//www.youtube.com/embed/q6jf45FYN34" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
   <script>
   document.write('<script src=' +
   ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
   '.js><\/script>')
   </script>
-  -->
+
   <script src="javascripts/vendor/jquery.js"></script>
   <script src="javascripts/foundation/foundation.js"></script>
   <script src="javascripts/foundation/foundation.abide.js"></script>
@@ -127,8 +99,6 @@
   <script src="javascripts/foundation/foundation.reveal.js"></script>
   <script src="javascripts/foundation/foundation.topbar.js"></script>
   <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
-  <script src="javascripts/vendor/tracks.js"></script>
-  <script src="javascripts/player.js"></script>
   
   
   <script>
