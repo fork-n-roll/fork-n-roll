@@ -2,7 +2,6 @@
 require('nko')('fagdshmxJpp-hZcg');
 
 var express = require('express');
-var user = require('./routes/user');
 var songs = require('./routes/songs');
 var tracks = require('./routes/tracks');
 var http = require('http');
@@ -30,7 +29,7 @@ app.use(express.session());
 app.use(express.bodyParser({
   keepExtensions: true,
   uploadDir: __dirname + '/frontend/tracks',
-  limit: '2mb'
+  limit: '4mb'
 }));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'frontend')));
@@ -40,7 +39,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/users', user.list);
 app.get('/songs/:hash', songs.show);
 app.post('/tracks', tracks.create);
 

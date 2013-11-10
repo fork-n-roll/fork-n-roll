@@ -6,7 +6,7 @@ var encodingJobs = {
     var filePathWithoutExt = filePath.slice(0, -4);
     exec('/home/deploy/bin/ffmpeg -i ' + filePath + ' ' + filePathWithoutExt + '.' + format, function (err, stdout, stderr) {
       if (err) return callback(new Error(err));
-      callback(stdout);
+      callback('DONE', filePath, format);
     });
   },
 }

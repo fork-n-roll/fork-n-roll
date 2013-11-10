@@ -1,5 +1,5 @@
 var Song = require('../models/song');
-var song = new Song('db/test.git');
+var song = new Song(process.env.GIT_PATH || 'db/test.git');
 
 var format = format = require('util').format;
 var fs = require('fs');
@@ -35,8 +35,8 @@ exports.create = function(req, res, next) {
     };
 
     // save new song
-    if (req.body.parent) {
-      song.addTrack(req.body.parent, trackData, callback);
+    if (req.body.parent_song) {
+      song.addTrack(req.body.parent_song, trackData, callback);
     } else {
       song.createWithTrack(trackData, callback);
     }
