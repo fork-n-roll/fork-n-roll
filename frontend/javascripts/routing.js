@@ -34,6 +34,8 @@ $(document).ready(function() {
           $('#parent-container a').attr('href', '#/songs/' + res.parents[0]);
           $('#parent-container a').html(res.parents[0]);
           $('#parent-container').show();
+        } else {
+          $('#parent-container').hide();
         }
 
         loadAudio();
