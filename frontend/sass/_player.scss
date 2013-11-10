@@ -111,3 +111,36 @@
     background: #ffcc00;
   }
 }
+// SAVE
+.player-save {
+  width: 288px;
+  height: 96px;
+  display: block;
+  float: right;
+  div#choose-a-name {
+    width: 192px;
+    height: 96px;
+    padding: 1em;
+    float: left;
+  }
+  a#save { 
+    float: left;
+    width: 96px;
+    display: block;
+    padding: 34px; 
+    background: #333;
+    div { }
+  }
+  a#save:hover{ 
+    background: #666;
+  }
+  a#save div { 
+    width: 0; 
+    height: 0; 
+    border-top: solid 14px #06ec06;
+    border-right: solid 14px transparent;
+    border-left: solid 14px transparent;
+    margin-top: 8px;
+  }
+}
+

@@ -12,14 +12,13 @@
 
 }
 
-
 // CONTAINER
 .container {
   margin: 2em 0;
 }
 .kolike {
   line-height: 50px;
-  padding: 6px 0 6px 16px;
+  padding: 18px 0 6px 16px;
 }
 .payoff {
   height: 96px;
@@ -35,4 +34,7 @@
   left: 0;
   bottom: 0;
   right: 0;
+}
+.parent-message {
+  margin-bottom: 2.5em;
 }
