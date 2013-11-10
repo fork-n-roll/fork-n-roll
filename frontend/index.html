@@ -61,34 +61,31 @@
     </div><!-- PLAYER BUTTONS -->
     <!-- TRACKS-->
     <div class="tracks row">
-      <ul class="no-bullet large-12 columns">
-        <li class="track player">
-          <div id="gutter">
-            <div id="loading"></div>
-            <div id="handle" class="ui-slider-handle"></div>
-          </div>
-          <div class="info">
-            <h6>Nome</h6>
-            <h6 id="timeleft"></h6>
-          </div>
-          <audio>
-            <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/synth.mp3" type="audio/mpeg"></source>
-          </audio>
-        </li>
-        <li class="track player">
-          <div id="gutter">
-            <div id="loading"></div>
-            <div id="handle" class="ui-slider-handle"></div>
-          </div>
-          <div class="info">
-            <h6>Nome</h6>
-            <h6 id="timeleft"></h6>
-          </div>
-          <audio>
-            <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/drum.mp3" type="audio/mpeg"></source>
-          </audio>
-        </li>
-      </ul>
+      <div id="gutter">
+        <div id="handle" class="ui-slider-handle"></div>
+        <ul class="no-bullet large-12 columns">
+          <li id="track01" class="track player">
+            <div class="loading"></div>
+            <div class="info">
+              <h6>Synth</h6>
+              <h6 class="timeleft"></h6>
+            </div>
+            <audio>
+              <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/synth.mp3" type="audio/mpeg"></source>
+            </audio>
+          </li>
+          <li id="track02" class="track player">
+            <div class="loading"></div>
+            <div class="info">
+              <h6>Drum</h6>
+              <h6 class="timeleft"></h6>
+            </div>
+            <audio>
+              <source src="https://dl.dropboxusercontent.com/u/3094976/forknroll/drum.mp3" type="audio/mpeg"></source>
+            </audio>
+          </li>
+        </ul>
+      </div>
     </div><!-- TRACKS-->
     <div class="row">
       <div class="large-12 columns">
