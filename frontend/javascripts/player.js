@@ -39,18 +39,21 @@ function loadAudio() {
 
   $('.track').each(function(i, trackContainer) {
     var progressElement = $(trackContainer).children('.loading');
+    progressElement.progressbar();
+
     var trackId = $(trackContainer).attr('id');
     var audioElement = $(trackContainer).children('audio').get(0);
     var track = new tracks.Track(audioElement);
+
     track.on('progress', function() {
       if (this.attr('buffered').length > 0) {
         progressElement.progressbar('value', this.attr('buffered').end(0));
       } else {
         // NOTE: already buffered?
-        // progressElement.progressbar('value', this.attr('duration'));
+        progressElement.progressbar('value', this.attr('duration'));
       }
     }).on('loadedmetadata', function() {
-      progressElement.progressbar({ max: this.attr('duration') });
+      progressElement.progressbar('option', 'max', this.attr('duration'));
     });
 
     audioTracks[trackId] = track;
