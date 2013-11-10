@@ -1,6 +1,6 @@
 {
-  "name": "Fork 'n' Roll",
-  "version": "0.0.2",
+  "name": "fork-n-roll",
+  "version": "0.0.3",
   "description": "Record now!",
   "main": "server.js",
   "scripts": {
