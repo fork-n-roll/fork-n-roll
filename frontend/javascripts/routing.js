@@ -19,9 +19,9 @@ $(document).ready(function() {
           $($.render($('[type=\'html/track\']').html(), {
             id: '_' + ('' + Math.random()).slice(2),
             name: track.name,
-            urlMp3: track.url.slice(4) + '.mp3',
-            urlAac: track.url.slice(4) + '.mp3',
-            urlOgg: track.url.slice(4) + '.mp3'
+            urlMp3: track.url.slice(0, 4) + '.mp3',
+            urlAac: track.url.slice(0, 4) + '.mp3',
+            urlOgg: track.url.slice(0, 4) + '.mp3'
           })).appendTo($('#tracks-list'));
         });
 
