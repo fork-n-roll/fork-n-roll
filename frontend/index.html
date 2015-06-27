@@ -22,6 +22,17 @@
   <style type='text/css'>
     ul { list-style: none; }
     #recordingslist audio { display: block; margin-bottom: 10px; }
+
+    .node {
+      stroke: #fff;
+      stroke-width: 2px;
+    }
+
+    .link {
+      fill: none;
+      stroke: #000;
+    }
+
   </style>
 </head>
 <body>
@@ -69,7 +80,6 @@
       <section class="top-bar-section">
         <ul class="right">
           <li><a href="/about.html">About</a></li>
-          <li class="kolike"><iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe></li>
         </ul>
       </section>
     </nav>
@@ -123,7 +133,7 @@
         </div>
       </div>
     </div><!-- SAVE FORM -->
-    <!-- SHARE -->
+    <!-- SHARE
     <div class="row">
       <div class="large-6 column">
         <div class="panel">
@@ -131,7 +141,7 @@
           <iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.html?count=horizontal&hashtags=forknroll&size=l&text=Fork%20and%20Roll&url=http%3A%2F%2Fcurly-brackets.2013.nodeknockout.com%2F" style="width: 136px; height: 28px;"></iframe>
         </div>
       </div>
-    </div><!-- SHARE -->
+    </div> SHARE -->
     <!-- PARENT -->
     <div id="parent-container" class="row" style="display: none">
       <div class="large-6 column">
@@ -146,8 +156,7 @@
     </div><!-- PARENT -->
   </div> <!-- CONTENT -->
 
-  <div class="video" style="background: #333;">
-
+  <!--<div class="video" style="background: #333;">
     <header class="row">
       <div class="large-12 columns">
         <h2 style="color: #fff;">How to</h2>
@@ -166,8 +175,7 @@
       </p>
     </div>
     </section>
-
-  </div>
+  </div>-->
 
   <div class="row">
     
@@ -202,5 +210,8 @@
   <script>
     $(document).foundation();
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  
 </body>
 </html>
