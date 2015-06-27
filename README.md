@@ -4,6 +4,12 @@
 # getting the code
 git clone git@github.com:nko4/curly-brackets.git && cd ./curly-brackets/
 
+# install redis
+brew install redis
+
+# start redis
+redis
+
 # install zurb foundation and compass
 gem install zurb-foundation
 gem install compass
