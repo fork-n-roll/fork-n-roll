@@ -32,7 +32,7 @@ $(document).ready(function() {
         $('#choose-a-name input[name=\'parent\']').val(urlSegments[1]);
 
         // share link
-        var twitterIframeUrl = 'http://platform.twitter.com/widgets/tweet_button.html?count=horizontal&hashtags=forknroll&size=l&text=Fork%20and%20Roll&url=http%3A%2F%2Fcurly-brackets.2013.nodeknockout.com%2F';
+        var twitterIframeUrl = 'http://platform.twitter.com/widgets/tweet_button.html?count=horizontal&hashtags=forknroll&size=l&text=Fork%20%27n%27%20Roll&url=http%3A%2F%2Ffork-n-roll.com%2F';
         $('#share-container iframe').attr('src', twitterIframeUrl + '#/songs/' + urlSegments[1]);
 
         // parent link
