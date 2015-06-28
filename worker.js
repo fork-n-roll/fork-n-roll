@@ -4,7 +4,7 @@ var encodingJobs = {
   // format is 'mp3', 'aac', or 'ogg'
   encode: function(filePath, format, callback) {
     var filePathWithoutExt = filePath.slice(0, -4);
-    exec('/home/deploy/bin/ffmpeg -i ' + filePath + ' ' + filePathWithoutExt + '.' + format, function (err, stdout, stderr) {
+    exec('ffmpeg -i ' + filePath + ' ' + filePathWithoutExt + '.' + format, function (err, stdout, stderr) {
       if (err) return callback(new Error(err));
       callback('DONE', filePath, format);
     });
