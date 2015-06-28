@@ -2,19 +2,37 @@ var audioContext;
 var recorder;
 var recording = false;
 
+
 function startUserMedia(stream) {
   var input = audioContext.createMediaStreamSource(stream);
   console.log('Media stream created.');
   
+  /*
   input.connect(audioContext.destination);
   console.log('Input connected to audio context destination.');
-  
+  */
+  //mute playback
+  var audioGain = audioContext.createGain();
+  audioGain.gain.value = 0;
+  input.connect(audioGain);
+  audioGain.connect(audioContext.destination);
+  var monitor = true;
+
   recorder = new Recorder(input);
   console.log('Recorder initialised.');
 
   $('.player-rec').removeClass('inactive');
 
   $('#rec').click(startRecording);
+  $('#monitor').click( function() {
+    if(monitor){
+      audioGain.gain.value = 1;
+      monitor = false;
+    }else if(monitor==false){
+      audioGain.gain.value = 0;
+      monitor = true;
+    }
+  });
 }
 
 function startRecording() {
