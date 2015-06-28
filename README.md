@@ -1,8 +1,8 @@
-## Quick Start
+## Development
 
-~~~sh
+```sh
 # getting the code
-git clone git@github.com:nko4/curly-brackets.git && cd ./curly-brackets/
+git clone git@github.com:fork-n-roll/fork-n-roll.git
 
 # install redis
 brew install redis
@@ -24,31 +24,31 @@ npm start
 # testing
 npm test
 
-# deploying (to http://curly-brackets.2013.nodeknockout.com/)
+# deploying (to fork-n-roll.com)
 ./deploy nko
+```
 
-# ssh access
-ssh deploy@curly-brackets.2013.nodeknockout.com
-ssh root@curly-brackets.2013.nodeknockout.com
-# or, if you get prompted for a password
-ssh -i ./id_deploy deploy@curly-brackets.2013.nodeknockout.com
-ssh -i ./id_deploy root@curly-brackets.2013.nodeknockout.com
-~~~
+## Remote server
 
-Read more about this setup [on our blog][deploying-nko].
+Download and run [setup.sh](https://github.com/fork-n-roll/fork-n-roll/blob/master/deploy.conf) on your remote machine.
 
-[deploying-nko]: http://blog.nodeknockout.com/post/66039926165/node-knockout-deployment-setup
+See also:
+
+* http://blog.nodeknockout.com/post/66039926165/node-knockout-deployment-setup
+* https://github.com/nko4/website/blob/df5c255a626b5c9bb2a1a4e7d4237717d8b4ebb1/scripts/setup/setup-ubuntu.sh
+* https://github.com/DonaldDerek/linode-cheat-sheet/blob/18179a0a32ab5c5136d70f2fad55a805a04b891c/README.md#intstall-ffmpeg
 
 ## Tips
 
-### Your Server
+### Server
 
-We've already set up a basic node server for you. Details:
-
-* Ubuntu 12.04 (Precise) - 64-bit
-* server.js is at: `/home/deploy/current/server.js`
-* logs are at: `/home/deploy/shared/logs/server/current`
-* `runit` keeps the server running.
+* Ubuntu 14.04 - 64-bit
+* repo is at: `/home/deploy/current`
+* server is at: `/home/deploy/current/server.js`
+* worker is at: `/home/deploy/current/worker.js`
+* server logs are at: `/home/deploy/shared/logs/server/current`
+* worker logs are at: `/home/deploy/shared/logs/worker/current`
+* `runit` keeps the server/worker running.
   * `sv restart serverjs` - restarts
   * `sv start serverjs` - starts
   * `sv stop serverjs` - stops
@@ -57,34 +57,3 @@ We've already set up a basic node server for you. Details:
 
 You can use the `./deploy` script included in this repo to deploy to your
 server right now. Advanced users, feel free to tweak.
-
-Read more about this setup [on our blog][deploying-nko].
-
-### Vote KO Widget
-
-![Vote KO widget](http://f.cl.ly/items/1n3g0W0F0G3V0i0d0321/Screen%20Shot%202012-11-04%20at%2010.01.36%20AM.png)
-
-Use our "Vote KO" widget to let from your app directly. Here's the code for
-including it in your site:
-
-~~~html
-<iframe src="http://nodeknockout.com/iframe/curly-brackets" frameborder=0 scrolling=no allowtransparency=true width=115 height=25>
-</iframe>
-~~~
-
-### Tutorials & Free Services
-
-If you're feeling a bit lost about how to get started or what to use, we've
-got some [great resources for you](http://nodeknockout.com/resources),
-including:
-
-* [How to install node and npm](http://blog.nodeknockout.com/post/65463770933/how-to-install-node-js-and-npm)
-* [Getting started with Express](http://blog.nodeknockout.com/post/65630558855/getting-started-with-express)
-* [OAuth with Passport](http://blog.nodeknockout.com/post/66118192565/getting-started-with-passport)
-* [Going Beyond “Hello World” with Drywall](http://blog.nodeknockout.com/post/65711111886/going-beyond-hello-world-with-drywall)
-* [and many more](http://nodeknockout.com/resources#tutorials)&hellip;
-
-## Have fun!
-
-If you have any issues, we're on IRC in #nodeknockout on freenode, email us at
-<help@nodeknockout.com>, or tweet [@node_knockout](https://twitter.com/node_knockout).
