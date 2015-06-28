@@ -7,10 +7,6 @@ function startUserMedia(stream) {
   var input = audioContext.createMediaStreamSource(stream);
   console.log('Media stream created.');
   
-  /*
-  input.connect(audioContext.destination);
-  console.log('Input connected to audio context destination.');
-  */
   //mute playback
   var audioGain = audioContext.createGain();
   audioGain.gain.value = 0;
