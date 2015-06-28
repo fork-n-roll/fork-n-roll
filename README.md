@@ -30,7 +30,7 @@ npm test
 
 ## Remote server
 
-Download and run [setup.sh](https://github.com/fork-n-roll/fork-n-roll/blob/master/deploy.conf) on your remote machine.
+Download and run [setup.sh](https://github.com/fork-n-roll/fork-n-roll/blob/master/setup.sh) on your remote machine.
 
 See also:
 
