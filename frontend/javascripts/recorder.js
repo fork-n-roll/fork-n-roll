@@ -28,9 +28,11 @@ function startUserMedia(stream) {
     if(monitor){
       audioGain.gain.value = 1;
       monitor = false;
+      $('#monitor').addClass('monitor-on');
     }else if(monitor==false){
       audioGain.gain.value = 0;
       monitor = true;
+      $('#monitor').removeClass('monitor-on');
     }
   });
 }

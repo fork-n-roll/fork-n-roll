@@ -11,12 +11,6 @@
       background: #333;
       div { }
     }
-    a#monitor {
-      display: block;
-      padding: 17px; 
-      background: #333;
-      div { }
-    }
     a#play:hover, a#stop:hover { 
       background: #666;
     }
@@ -56,6 +50,14 @@
       background: #666;
     }
   }
+}
+a#monitor {
+  display: block;
+  padding: 48px;
+  line-height: 48px;
+  text-align: ceneter; 
+  background: #333;
+  color: #ffffff;
 }
 .inactive {
   opacity: 0.3;

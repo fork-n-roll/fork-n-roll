@@ -30,7 +30,18 @@
       fill: none;
       stroke: #000;
     }
-
+    #monitor {
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      text-align: center; 
+      background: #333;
+      color: #ffffff;
+    }
+    #monitor.monitor-on {
+      color: #FFFD3C;
+    }
   </style>
 </head>
 <body>
@@ -104,7 +115,7 @@
       </div>
       <div class="large-5 columns text-right">
         <h4 class="timeleft">00:00</h4>
-        <a id="monitor" class="has-tip tip-left" data-tooltip title="<img src='images/headset.png' /><br/>Avoid feedback!<br/>Be Happy.">on</a>
+        <a id="monitor" class="has-tip tip-bottom" data-tooltip title="Enable monitor. <br/>Put headphones on <br/><strong>this may causes audio feedback</strong>">♫</a>
       </div>
     </div><!-- PLAYER BUTTONS -->
     <!-- TRACKS-->
