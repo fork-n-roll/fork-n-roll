@@ -3,4 +3,5 @@
 /frontend/tracks
 .DS_Store
 npm-debug.log
-/db/*.git
+/db/test.git
+/db/development.git

@@ -45,6 +45,12 @@ deploy_home=/home/deploy
 cp -r ~/.ssh $deploy_home/.ssh
 chown -R deploy $deploy_home/.ssh
 
+# Setting up repository...
+git clone git@github.com:fork-n-roll/fork-n-roll.git $deploy_home/source
+
+# Setting up database path...
+echo "export GIT_PATH=$deploy_home/source/db/production.git" >> /etc/profile.d/NODE_ENV.sh
+
 # Setting up runit...
 apt-get install -y runit
 
@@ -138,7 +144,3 @@ chmod +x $workerjs_etc/log/run
 # Giving the deploy user the ability to control the service...
 chown -R deploy $workerjs_etc/supervise
 chown -R deploy $deploy_home/shared
-
-# Create database directory
-mkdir -p $deploy_home/source/db/fnr.git
-echo "export GIT_PATH=$deploy_home/source/db/fnr.git" >> /etc/profile.d/NODE_ENV.sh
