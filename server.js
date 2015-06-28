@@ -1,6 +1,3 @@
-// https://github.com/nko4/website/blob/master/module/README.md#nodejs-knockout-deploy-check-ins
-require('nko')('fagdshmxJpp-hZcg');
-
 var express = require('express');
 var songs = require('./routes/songs');
 var tracks = require('./routes/tracks');

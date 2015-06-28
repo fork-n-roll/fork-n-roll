@@ -25,7 +25,7 @@ npm start
 npm test
 
 # deploying (to fork-n-roll.com)
-./deploy nko
+./deploy fnr
 ```
 
 ## Remote server
