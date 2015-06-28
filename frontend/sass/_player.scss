@@ -51,6 +51,14 @@
     }
   }
 }
+a#monitor {
+  display: block;
+  padding: 48px;
+  line-height: 48px;
+  text-align: ceneter; 
+  background: #333;
+  color: #ffffff;
+}
 .inactive {
   opacity: 0.3;
   cursor: auto;
