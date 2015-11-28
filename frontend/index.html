@@ -8,7 +8,7 @@
   <title>Fork 'n' Roll</title>
 
   <link rel="stylesheet" href="stylesheets/app.css">
-  <link rel="stylesheet" href="stylesheets/vendor/no-theme/jquery-ui-1.10.3.custom.css">
+  <link rel="stylesheet" href="stylesheets/vendor/no-theme/jquery-ui.css">
   <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="/images/favicon.ico" type="image/png">
 
@@ -17,32 +17,6 @@
   <meta property="og:image" content="/images/logo.png"/>
 
   <script src="javascripts/vendor/custom.modernizr.js"></script>
-  <style type='text/css'>
-    ul { list-style: none; }
-    #recordingslist audio { display: block; margin-bottom: 10px; }
-
-    .node {
-      stroke: #fff;
-      stroke-width: 2px;
-    }
-
-    .link {
-      fill: none;
-      stroke: #000;
-    }
-    #monitor {
-      display: inline-block;
-      width: 48px;
-      height: 48px;
-      line-height: 48px;
-      text-align: center; 
-      background: #333;
-      color: #ffffff;
-    }
-    #monitor.monitor-on {
-      color: #FFFD3C;
-    }
-  </style>
 </head>
 <body>
 
@@ -75,9 +49,9 @@
   </script>
 
   <!-- NAV BAR -->
-  <div class="contain-to-grid">
-    <nav class="top-bar">
-      <ul class="title-area">
+  <div class="container">
+    <nav class="top-bar grid">
+      <ul class="title-area column double">
         <!-- Title Area -->
         <li class="name">
           <h1><a href="/" class="logo">Fork 'n' Roll</a></h1>
@@ -85,12 +59,6 @@
         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
       </ul>
-
-      <section class="top-bar-section">
-        <ul class="right">
-          <li><a href="/about.html">About</a></li>
-        </ul>
-      </section>
     </nav>
   </div>
 
@@ -98,8 +66,8 @@
   <div class="container">
 
     <!-- PLAYER BUTTONS -->
-    <div class="row">
-      <div class="player-buttons large-3 columns">
+    <div class="grid">
+      <div class="player-buttons column single-mobile-triple">
         <div class="player-ctrl play inactive">
           <a id="stop"><div></div></a>
           <a id="play"><div></div></a>
@@ -108,19 +76,19 @@
           <a id="rec"><div></div></a>
         </div>
       </div>
-      <div class="large-4 columns"> 
-        <div class="payoff hide-for-small">
-          <h5 class="v-center">Put Your headphones on<br/>and press rec</h5> 
+      <div class="column single hide-for-mobile"> 
+        <div class="payoff">
+          <h4 class="v-center">Put Your headphones on<br/>and press rec</h4> 
         </div>
       </div>
-      <div class="large-5 columns text-right">
-        <h4 class="timeleft">00:00</h4>
-        <a id="monitor" class="has-tip tip-bottom" data-tooltip title="Enable monitor. <br/>Put headphones on <br/><strong>this may causes audio feedback</strong>">♫</a>
+      <div class="column double-mobile-single content-right">
+        <h2 class="timeleft">00:00</h2>
+        <a id="monitor" title="Enable monitor. Put headphones on this may causes audio feedback">♫</a>
       </div>
     </div><!-- PLAYER BUTTONS -->
     <!-- TRACKS-->
-    <div class="tracks row">
-      <div class="large-12 columns">
+    <div class="tracks grid">
+      <div class="column full">
         <div class="tracks-container">
           <div id="gutter">
             <div id="handle" class="ui-slider-handle"></div>
@@ -130,55 +98,53 @@
       </div>
     </div><!-- TRACKS-->
     <!-- SAVE FORM -->
-    <div style="display: none" id="save-form" class="row">
-      <div class="large-12 columns text-right">
+    <div style="display: none" id="save-form" class="grid">
+      <div class="column full content-right">
         <div class="player-save">
           <div id="choose-a-name">
-            <h6 class="text-left">Choose a Name</h6>
+            <p class="text-left"><strong>Choose a Name</strong></p>
             <input type="text" name="name" placeholder="Guitar">
             <input type="hidden" name="parent">
           </div>
-          <div class="preloader" style="display: none"></div>
+          <div class="preloader" style="display: none"><i>saving...</i></div>
           <a id="save" class="has-tip tip-bottom" data-tooltip title="Save your track!"><div></div></a>
         </div>
       </div>
     </div><!-- SAVE FORM -->
-    <!-- PARENT -->
-    <div id="parent-container" class="row" style="display: none">
-      <div class="large-6 column">
+  </div> <!-- CONTENT -->
+
+  <div class="container">
+    <!-- Share -->
+    <div class="grid more">
+      <div id="share-container" class="column single" style="display: none">
         <div class="panel">
-          <h6>Hey!</h6>
+          <h4>Share</h4>
+            <input type="text" onClick="this.setSelectionRange(0, this.value.length)" value="http://www.fork-n-roll.com/#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">
+        </div>
+      </div>
+    </div>
+    <!-- SHARE -->
+    <!-- PARENT -->
+    <div class="grid">
+      <div id="parent-container" class="column single" style="display: none">
+        <div class="panel">
+          <h4>Hey!</h4>
           <p class="parent-message">
-            Listen to the parent track!<br/>
-            <a class="route" href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">e72615a541024a9fb2d503ee9641f9ad4589ab7b</a>
+            <a class="route" href="#/songs/e72615a541024a9fb2d503ee9641f9ad4589ab7b">Listen</a> to the parent track!<br/>
           </p>
         </div>
       </div>
-    </div><!-- PARENT -->
-  </div> <!-- CONTENT -->
-
-  <div class="row">
-    
+    </div>
   </div>
 
+  <footer>
+    <div class="grid">
+      <div class="column full content-center"><small>Made in NYC by <a href="https://twitter.com/johnnyaboh" target="_blank">Giovanni Cappellotto</a> and <a href="https://twitter.com/pinakes" target="_blank">Francesco Fraioli</a></small></div>
+    </div>
+  </footer>
+
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="javascripts/foundation/foundation.js"></script>
-  <script src="javascripts/foundation/foundation.abide.js"></script>
-  <script src="javascripts/foundation/foundation.orbit.js"></script>
-  <script src="javascripts/foundation/foundation.joyride.js"></script>
-  <script src="javascripts/foundation/foundation.forms.js"></script>
-  <script src="javascripts/foundation/foundation.tooltips.js"></script>
-  <script src="javascripts/foundation/foundation.clearing.js"></script>
-  <script src="javascripts/foundation/foundation.alerts.js"></script>
-  <script src="javascripts/foundation/foundation.magellan.js"></script>
-  <script src="javascripts/foundation/foundation.placeholder.js"></script>
-  <script src="javascripts/foundation/foundation.cookie.js"></script> 
-  <script src="javascripts/foundation/foundation.interchange.js"></script>
-  <script src="javascripts/foundation/foundation.dropdown.js"></script>
-  <script src="javascripts/foundation/foundation.section.js"></script>
-  <script src="javascripts/foundation/foundation.reveal.js"></script>
-  <script src="javascripts/foundation/foundation.topbar.js"></script>
-  <script src="javascripts/vendor/jquery-ui-1.10.3.custom.js"></script>
+  <script src="javascripts/vendor/jquery-ui.js"></script>
   <script src="javascripts/vendor/jquery.riot.js"></script>
   <script src="javascripts/vendor/render.js"></script>
   <script src="javascripts/vendor/recorder.js"></script>
@@ -188,7 +154,9 @@
   <script src="javascripts/recorder.js"></script>
 
   <script>
-    $(document).foundation();
+    $(function() {
+      $( document ).tooltip();
+    });
   </script>
 
   <script>

@@ -52,12 +52,12 @@
   }
 }
 a#monitor {
-  display: block;
   padding: 48px;
   line-height: 48px;
   text-align: ceneter; 
   background: #333;
   color: #ffffff;
+  padding: 0;
 }
 .inactive {
   opacity: 0.3;
@@ -73,6 +73,10 @@ a#monitor {
 // TRACK
 .tracks-container {
   margin-left: 96px;
+  ul#tracks-list {
+    padding: 0;
+    margin: 0;
+  }
 }
 #gutter {
   position: relative;
@@ -101,7 +105,11 @@ a#monitor {
         left: 22px;
         bottom: 0;
         right: 0;
-        h6 { margin: 0; }
+        h6 {
+          font-size: 1em; 
+          line-height: 1.4em; 
+          margin: 0;
+        }
         #timeleft { opacity: 0.3; }
       }
     }
@@ -119,9 +127,32 @@ a#monitor {
     background: #ffcc00;
   }
 }
+#recordingslist audio { display: block; margin-bottom: 10px; }
+
+.node {
+  stroke: #fff;
+  stroke-width: 2px;
+}
+
+.link {
+  fill: none;
+  stroke: #000;
+}
+#monitor {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center; 
+  background: #333;
+  color: #ffffff;
+}
+#monitor.monitor-on {
+  color: #FFFD3C;
+}
 // SAVE
 .player-save {
-  width: 288px;
+  width: 328px;
   height: 96px;
   display: block;
   float: right;
@@ -130,12 +161,14 @@ a#monitor {
     height: 96px;
     padding: 1em;
     float: left;
+    p {
+      margin-top: 0.2em;
+      margin-bottom: 0.5em;
+    }
   }
   a#save { 
-    float: left;
-    width: 96px;
-    display: block;
-    padding: 34px; 
+    display: inline-block;
+    padding: 34px;
     background: #333;
     div { }
   }
