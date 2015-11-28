@@ -25,7 +25,6 @@ $(document).ready(function() {
           })).appendTo($('#tracks-list'));
         });
 
-        console.log("result");
         console.log(res);
 
         // save form update
@@ -36,6 +35,8 @@ $(document).ready(function() {
         //var twitterIframeUrl = 'http://platform.twitter.com/widgets/tweet_button.html?count=horizontal&hashtags=forknroll&size=l&text=Fork%20%27n%27%20Roll&url=http%3A%2F%2Ffork-n-roll.com%2F';
         $('#share-container input').attr('value', 'http://www.fork-n-roll.com/#/songs/' + urlSegments[1]);
         $('#share-container').show();
+
+        $('#play').attr('title', "Refresh the page if the play is not working")
 
         // parent link
         if (res.parents.length > 0) {
